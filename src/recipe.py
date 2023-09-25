@@ -35,7 +35,7 @@ class Recipe:
         return self.ingredients
 
     def add_ingredient(self, category: str, ingredient: str) -> None:
-        """Add existing ingredient to recipe."""
+        """Add existing ingredient to recipe. Does not matter if ingredient category is already in recipe."""
         category_list = self.ingredients.get(category)
         if category_list != None:
             category_list.append(ingredient)
