@@ -30,9 +30,13 @@ class Recipe:
         """Return recipe name."""
         return self.recipe_name
 
-    def get_recipe_ingredients(self) -> List[Ingredient]:
-        """Return recipe ingredients."""
+    def get_recipe_ingredients(self) -> dict[str, List[Ingredient]]:
+        """Return all recipe ingredients ordered by category."""
         return self.ingredients
+    
+    def get_ingredients_in_category(self, category: str) -> List[Ingredient]:
+        """Return all recipe ingredients in one category."""
+        return self.ingredients.get(category, [])
 
     def add_ingredient(self, category: str, ingredient: str) -> None:
         """Add existing ingredient to recipe. Does not matter if ingredient category is already in recipe."""
