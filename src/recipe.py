@@ -1,15 +1,15 @@
 """
-Authors: Yonas Gebregziabher, Nancy Xing, Yi Yang 
+Authors: Nancy Xing 
 Assignment: CSCI 3725 PQ2 (Adapted from PQ1)
 Date: 9-25-2023
 
 The Recipe class models a recipe as a list of ingredients with specified amounts. 
 Recipes are created by either reading from file, reading from a file directory,
-or providing a name and a list of Ingredient objects. Recipes can be written to a text file. 
+or providing a name and a dict of Ingredient objects keyed by category. Recipes can be written to a text file. 
 """
 
 from typing import *
-from .ingredient import Ingredient
+from ingredient import Ingredient
 from constants import *
 
 class Recipe:
@@ -20,38 +20,26 @@ class Recipe:
         ingredients -- List of ingredient objects in the recipe in the format: {category : [Ingredients]}
         """
         self.recipe_name = recipe_name
-        self.ingredients = ingredients #TODO remove
-        
-        self.dry_bases = ingredients.get(DRY_BASES, None)
-        self.wet_bases = ingredients.get(WET_BASES, None)
-        self.sweeteners = ingredients.get(SWEETENERS, None)
-        self.flavorings = ingredients.get(FLAVORINGS, None)
-        self.spices = ingredients.get(SPICES, None)
-        self.fillings = ingredients.get(FILLINGS, None)
-        self.leaveners = ingredients.get(LEAVENERS, None)
-        self.toppings = ingredients.get(TOPPINGS, None)
+        self.ingredients = {}
+
+        # Initialize dict with all passed values or empty list if not found
+        for c in CATEGORIES:
+            self.ingredients.update({c : ingredients.get(c, [])})
 
     def get_recipe_name(self) -> str:
         """Return recipe name."""
         return self.recipe_name
 
-    #TODO
     def get_recipe_ingredients(self) -> List[Ingredient]:
         """Return recipe ingredients."""
         return self.ingredients
 
-    #TODO
-    def add_ingredient(self, ingredient: str) -> None:
+    def add_ingredient(self, category: str, ingredient: str) -> None:
         """Add existing ingredient to recipe."""
-        self.ingredients.append(ingredient)
-
-    #TODO
-    def add_ingredient(self, name: str, amount: int | float) -> None:
-        """Create a new ingredient and add it to the recipe."""
-        self.ingredients.append(Ingredient(
-            ingredient_name=name, ingredient_amount=amount))
+        category_list = self.ingredients.get(category)
+        if category_list != None:
+            category_list.append(ingredient)
     
-    #TODO
     def __str__(self) -> str:
         """
         Serializes the recipe with format:
@@ -60,7 +48,24 @@ class Recipe:
         [ingredient]...
         """
         ingredients = ""
-        for ingredient in self.ingredients:
-            ingredients += str(ingredient)
+        for cat, ings in self.ingredients.items():
+            for i in ings:
+                ingredients += f"{str(i)}\n"
         serialize = f"Recipe Name: {self.recipe_name}\n{ingredients}"
         return serialize
+
+if __name__ == "__main__":
+    # Initial dictionary where not all category is filled
+    test_dict = {
+        DRY_BASES : [Ingredient("Flour", 1, OUNCE)],
+        WET_BASES : [Ingredient("Butter", 1, CUP), Ingredient("Eggs", 2, "")],
+        SWEETENERS : [Ingredient("Sugar", 1, CUP)],
+        SPICES : [Ingredient("Corriander", 1.5, TSP)]
+    }
+    r = Recipe(recipe_name="Test Recipe", ingredients=test_dict)
+
+    r.add_ingredient(SPICES, Ingredient("Salt", 1, TSP)) # Add ing to existing category
+    r.add_ingredient(FILLINGS, Ingredient("Chocolate", 3, TBSP)) # Add ing to new category
+
+    print(str(r))
+    
