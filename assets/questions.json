@@ -1,0 +1,25 @@
+{
+    "questions" : [
+        {
+            "questionText" : "How are you feeling today?",
+            "responseOptions" : [
+                {
+                    "responseText" : "Light",
+                    "multipliers" : [{"leavener" : 1.5}, {"dry_base" : 0.5}]
+                },
+                {
+                    "responseText" : "Heavy",
+                    "multipliers" : [{"wet_base" : 1.5}, {"sweetener" : 2}, {"filling" : 1.5}]
+                },
+                {
+                    "responseText" : "Daring",
+                    "multipliers" : [{"spice" : 2}, {"flavoring" : 1.5}]
+                },
+                {
+                    "responseText" : "Calm",
+                    "multipliers" : [{"sweetener" : 1.5}, {"flavoring" : 0.5}, {"filling" : 0.5}, {"flavoring" : 0.5}]
+                }
+            ]
+        }
+    ]
+}

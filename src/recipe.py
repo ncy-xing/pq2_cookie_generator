@@ -9,8 +9,8 @@ or providing a name and a dict of Ingredient objects keyed by category. Recipes 
 """
 
 from typing import *
-from ingredient import Ingredient
-from constants import *
+from .ingredient import Ingredient
+from .constants import *
 
 class Recipe:
     def __init__(self, recipe_name: str = None, ingredients: dict[str, List[Ingredient]] = {}) -> None:
