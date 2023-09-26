@@ -9,6 +9,7 @@ OPTION_CHARACTER = 97
 #TODO add opening text and answer choice instructions
 #TODO add more questions 
 #TODO handle multiple questions changing probability of one category (currently just replaces it)
+#TODO improve error handling on user inputs
 def run_questions() -> dict[str, int | float]:
     """
     Reads in questions from JSON file and gets user input for questions. Convert user
@@ -48,7 +49,6 @@ def run_questions() -> dict[str, int | float]:
         # Convert user answer to its associated multiplier
         response_choice_index = ord(response) - OPTION_CHARACTER
         response_multipliers = response_options[response_choice_index]["multipliers"]
-        print(response_choice_index)
 
         # Apply question multipliers to total multipliers 
         for m in response_multipliers:
