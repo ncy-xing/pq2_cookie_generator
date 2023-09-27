@@ -1,14 +1,15 @@
 # from src.ingredient import Ingredient
+from numpy import mean
 from src.recipe import Recipe
 from src.constants import *
 import os
 import json
 
 OPTION_CHARACTER = 97
+DEFAULT_MULTIPLIER = 1.0
 
 #TODO add opening text and answer choice instructions
 #TODO add more questions 
-#TODO handle multiple questions changing probability of one category (currently just replaces it)
 #TODO improve error handling on user inputs
 def run_questions() -> dict[str, int | float]:
     """
@@ -16,14 +17,16 @@ def run_questions() -> dict[str, int | float]:
     response into associated multiplier for question response. 
     Multiplier defaults to 1 for each category.
 
-    returns: dict of {category name : multiplier}
+    returns: (recipe name, dict of {category name : multiplier})
     """
     # Initialize questions and multipliers
     questions_file = open(os.path.join("assets", "questions.json"))
     questions = json.load(questions_file)
-    multipliers = {}
+    responses = []
+    recipe_name = ""
+    multiplier_dict = {}
     for c in CATEGORIES:
-        multipliers.update({c : 1})
+        multiplier_dict.update({c : None})
 
     # Load questions
     for q in questions["questions"]:
@@ -48,13 +51,37 @@ def run_questions() -> dict[str, int | float]:
 
         # Convert user answer to its associated multiplier
         response_choice_index = ord(response) - OPTION_CHARACTER
-        response_multipliers = response_options[response_choice_index]["multipliers"]
+        responses.append(response_options[response_choice_index]["responseText"])
+        question_multipliers = response_options[response_choice_index]["multipliers"]
 
-        # Apply question multipliers to total multipliers 
-        for m in response_multipliers:
-            multipliers.update(m)
-    return multipliers
+
+        # Add question multiplier to total multipliers 
+        for q in question_multipliers:
+            for c, m in q.items():
+                category_multipliers = multiplier_dict.get(c)
+                if category_multipliers:
+                    category_multipliers.append(m)
+                else:
+                    multiplier_dict.update({c : [m]})
+
+    multipliers = {}
+
+    # Average multiple question effects on categories to get single multiplier. Initialize unmultiplied categories to 1. 
+    for c, m in multiplier_dict.items():
+        if not m:
+            multipliers.update({c : DEFAULT_MULTIPLIER})
+        elif len(m) == 1:
+            multipliers.update({c : m})
+        else:
+            multipliers.update({c : sum(m) / len(m)})   
+
+    for r in responses:
+        recipe_name += f"{r} "
+    recipe_name += "Cookie"
+
+    return recipe_name, multipliers
 
 if __name__ == "__main__":
-    multipliers = run_questions()
+    name, multipliers = run_questions()
+    print(f"Recipie name = {name}")
     print(f"Created multiplers = {multipliers}")
