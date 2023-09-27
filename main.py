@@ -8,6 +8,7 @@ import json
 OPTION_CHARACTER = 97
 DEFAULT_MULTIPLIER = 1.0
 
+# TODO make multipliers stack instead of average?
 def run_questions() -> dict[str, int | float]:
     """
     Reads in questions from JSON file and gets user input for questions. 
@@ -65,7 +66,7 @@ def run_questions() -> dict[str, int | float]:
 
     for r in responses:
         recipe_name += f"{r} "
-    recipe_name += "Cookie"
+    recipe_name += "Cookies"
 
     return recipe_name, multipliers
 
@@ -84,7 +85,7 @@ def merge_multipliers_in_category(multipliers : dict[str : [int | float]]) -> di
         if not m:
             merged_multipliers.update({c : DEFAULT_MULTIPLIER})
         elif len(m) == 1:
-            merged_multipliers.update({c : m})
+            merged_multipliers.update({c : m[0]})
         else:
             merged_multipliers.update({c : sum(m) / len(m)})   
     return merged_multipliers
