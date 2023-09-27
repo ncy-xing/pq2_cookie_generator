@@ -1,0 +1,24 @@
+{
+    "dry_base": [
+        {
+            "name": "butter",
+            "unit": "oz"
+        },
+        {
+            "name": "flor",
+            "unit": "cup"
+        }
+
+    ],
+    "leavener": [
+        {
+            "name": "baking soda",
+            "unit": "tsp"
+        },
+        {
+            "name": "yeast",
+            "unit": "tsp"
+        }
+
+    ]
+}
