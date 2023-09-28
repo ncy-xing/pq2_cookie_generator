@@ -44,8 +44,10 @@ class RecipeGenerator:
         ingredients = {}
         for category in self.ing_db:
             ing_list = self.ing_db[category]
-            num_of_elemts = random.randint(1, 2)
-            selected_ings = random.sample(ing_list, num_of_elemts)
+            weights = [float(ing["p"]) for ing in ing_list]
+            num_of_elemts = random.randint(1, 3)
+            selected_ings = [random.choices(ing_list, weights)[
+                0] for _ in range(num_of_elemts)]
             ings = []
             for ing in selected_ings:
                 ing_unit = ing["unit"]
