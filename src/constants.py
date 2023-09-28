@@ -1,15 +1,18 @@
-DRY_BASES = "dry_base"
-WET_BASES = "wet_base"
-SWEETENERS = "sweetener"
-FLAVORINGS = "flavoring"
-SPICES = "spice"
-FILLINGS = "filling"
-LEAVENERS = "leavener"
+FLOUR = "flour"
+FATS = "fats"
+SWEETENERS = "sweeteners"
+FLAVORINGS = "flavorings"
+LIQUIDS = "liquids"
+LEAVENERS = "leaveners"
+ADDIN = "add-ins"
+STABILIZERS = "stabilizers"
 TOPPINGS = "toppings"
+SALTS = "salts"
 
 CUP = "cup"
 OUNCE = "oz"
 TSP = "tsp"
 TBSP = "tbsp"
 
-CATEGORIES = [DRY_BASES, WET_BASES, SWEETENERS, FLAVORINGS, SPICES, FILLINGS, LEAVENERS, TOPPINGS]
+CATEGORIES = [FLOUR, FATS, SWEETENERS, FLAVORINGS, SALTS,
+              LIQUIDS, LEAVENERS, ADDIN, STABILIZERS, TOPPINGS]
