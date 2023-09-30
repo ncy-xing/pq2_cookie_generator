@@ -8,7 +8,6 @@ import json
 OPTION_CHARACTER = 97
 DEFAULT_MULTIPLIER = 1.0
 
-# TODO make multipliers stack instead of average?
 def run_questions() -> dict[str, int | float]:
     """
     Reads in questions from JSON file and gets user input for questions. 
@@ -25,7 +24,7 @@ def run_questions() -> dict[str, int | float]:
     recipe_name = ""
     multipliers = {}
     for c in CATEGORIES:
-        multipliers.update({c : None})
+        multipliers.update({c : 1})
 
     # Load questions
     print(questions["startText"])
@@ -55,40 +54,13 @@ def run_questions() -> dict[str, int | float]:
         # Add question multiplier to total multipliers 
         for q in question_multipliers:
             for c, m in q.items():
-                category_multipliers = multipliers.get(c)
-                if category_multipliers:
-                    category_multipliers.append(m)
-                else:
-                    multipliers.update({c : [m]})
-
-    # Combine multipliers from different questions into a single multiplier per category 
-    multipliers = merge_multipliers_in_category(multipliers)
+                multipliers.update({c : multipliers.get(c) + m})
 
     for r in responses:
         recipe_name += f"{r} "
     recipe_name += "Cookies"
 
     return recipe_name, multipliers
-
-def merge_multipliers_in_category(multipliers : dict[str : [int | float]]) -> dict[str : int | float]:
-    """
-    Helper function for run_questions. Averages multiple question effects on categories to get single multiplier. 
-    Initialize unmultiplied categories to 1.
-    params: 
-        --multipliers: {category : [multipliers]}
-    returns: 
-        {category : multiplier} where multiplier is the average of the list values of the initial dict. 
-        Categories with None multipliers are initialized to 1.  
-    """
-    merged_multipliers = {}
-    for c, m in multipliers.items():
-        if not m:
-            merged_multipliers.update({c : DEFAULT_MULTIPLIER})
-        elif len(m) == 1:
-            merged_multipliers.update({c : m[0]})
-        else:
-            merged_multipliers.update({c : sum(m) / len(m)})   
-    return merged_multipliers
     
 if __name__ == "__main__":
     name, multipliers = run_questions()
