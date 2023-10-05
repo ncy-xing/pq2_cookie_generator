@@ -2,6 +2,7 @@
 from numpy import mean
 from src.recipe import Recipe
 from src.constants import *
+from src.recipe_generator import RecipeGenerator
 import os
 import json
 
@@ -24,7 +25,7 @@ def run_questions() -> dict[str, int | float]:
     recipe_name = ""
     multipliers = {}
     for c in CATEGORIES:
-        multipliers.update({c : 1})
+        multipliers.update({c: 1})
 
     # Load questions
     print(questions["startText"])
@@ -36,7 +37,7 @@ def run_questions() -> dict[str, int | float]:
         # Print question and answer choices
         print(f"\n{question_text}")
         for i in range(num_options):
-            choice_letter = OPTION_CHARACTER + i 
+            choice_letter = OPTION_CHARACTER + i
             response_text = response_options[i]["responseText"]
             print(f"({(chr(choice_letter).upper())}) {response_text}")
 

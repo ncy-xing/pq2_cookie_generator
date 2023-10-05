@@ -1,0 +1,262 @@
+{
+    "flour": [
+        {
+            "name": "Whole Wheat Flour",
+            "unit": "cup",
+            "p": "0.1"
+        },
+        {
+            "name": "All-Purpose Flour",
+            "unit": "cup",
+            "p": "0.4"
+        },
+        {
+            "name": "Almond Flour",
+            "unit": "cup",
+            "p": "0.1"
+        },
+        {
+            "name": "Coconut Flour",
+            "unit": "cup",
+            "p": "0.05"
+        },
+        {
+            "name": "Rye Flour",
+            "unit": "cup",
+            "p": "0.05"
+        },
+        {
+            "name": "Oat Flour",
+            "unit": "cup",
+            "p": "0.1"
+        },
+        {
+            "name": "Spelt Flour",
+            "unit": "cup",
+            "p": "0.2"
+        }
+    ],
+    "fats": [
+        {
+            "name": "Butter",
+            "unit": "cup",
+            "p": "0.4"
+        },
+        {
+            "name": "Olive Oil",
+            "unit": "cup",
+            "p": "0.1"
+        },
+        {
+            "name": "Coconut Oil",
+            "unit": "cup",
+            "p": "0.15"
+        },
+        {
+            "name": "Lard",
+            "unit": "cup",
+            "p": "0.05"
+        },
+        {
+            "name": "Vegetable Oil",
+            "unit": "cup",
+            "p": "0.1"
+        },
+        {
+            "name": "Shortening",
+            "unit": "cup",
+            "p": "0.1"
+        },
+        {
+            "name": "Margarine",
+            "unit": "cup",
+            "p": "0.1"
+        }
+    ],
+    "sweeteners": [
+        {
+            "name": "White Sugar",
+            "unit": "cup",
+            "p": "0.4"
+        },
+        {
+            "name": "Brown Sugar",
+            "unit": "cup",
+            "p": "0.4"
+        },
+        {
+            "name": "Honey",
+            "unit": "tbsp",
+            "p": "0.05"
+        },
+        {
+            "name": "Maple Syrup",
+            "unit": "tbsp",
+            "p": "0.05"
+        },
+        {
+            "name": "Agave Nectar",
+            "unit": "tbsp",
+            "p": "0.02"
+        },
+        {
+            "name": "Confectioner's Sugar",
+            "unit": "cup",
+            "p": "0.02"
+        },
+        {
+            "name": "Molasses",
+            "unit": "tbsp",
+            "p": "0.02"
+        }
+    ],
+    "flavorings": [
+        {
+            "name": "Vanilla Extract",
+            "unit": "tsp",
+            "p": "0.4"
+        },
+        {
+            "name": "Almond Extract",
+            "unit": "tsp",
+            "p": "0.1"
+        },
+        {
+            "name": "Lemon Zest",
+            "unit": "tsp",
+            "p": "0.15"
+        },
+        {
+            "name": "Orange Zest",
+            "unit": "tsp",
+            "p": "0.15"
+        },
+        {
+            "name": "Cocoa Powder",
+            "unit": "cup",
+            "p": "0.1"
+        },
+        {
+            "name": "Cinnamon",
+            "unit": "tsp",
+            "p": "0.05"
+        },
+        {
+            "name": "Nutmeg",
+            "unit": "tsp",
+            "p": "0.05"
+        }
+    ],
+    "leaveners": [
+        {
+            "name": "Baking Powder",
+            "unit": "tsp",
+            "p": "0.3"
+        },
+        {
+            "name": "Baking Soda",
+            "unit": "tsp",
+            "p": "0.3"
+        },
+        {
+            "name": "Yeast",
+            "unit": "tsp",
+            "p": "0.2"
+        },
+        {
+            "name": "Whipped Egg Whites",
+            "unit": "oz",
+            "p": "0.2"
+        }
+    ],
+    "liquids": [
+        {
+            "name": "Water",
+            "unit": "cup",
+            "p": "0.2"
+        },
+        {
+            "name": "Milk",
+            "unit": "cup",
+            "p": "0.4"
+        },
+        {
+            "name": "Cream",
+            "unit": "cup",
+            "p": "0.2"
+        },
+        {
+            "name": "Almond Milk",
+            "unit": "cup",
+            "p": "0.2"
+        }
+    ],
+    "add-ins": [
+        {
+            "name": "Chocolate Chips",
+            "unit": "cup",
+            "p": "0.4"
+        },
+        {
+            "name": "Almonds",
+            "unit": "cup",
+            "p": "0.2"
+        },
+        {
+            "name": "Walnuts",
+            "unit": "cup",
+            "p": "0.2"
+        },
+        {
+            "name": "Raisins",
+            "unit": "cup",
+            "p": "0.2"
+        }
+    ],
+    "stabilizers": [
+        {
+            "name": "Xanthan Gum",
+            "unit": "tsp",
+            "p": "0.4"
+        },
+        {
+            "name": "Cream of Tartar",
+            "unit": "tsp",
+            "p": "0.3"
+        },
+        {
+            "name": "Cornstarch",
+            "unit": "tbsp",
+            "p": "0.3"
+        }
+    ],
+    "salts": [
+        {
+            "name": "Table Salt",
+            "unit": "tsp",
+            "p": "0.5"
+        },
+        {
+            "name": "Kosher Salt",
+            "unit": "tsp",
+            "p": "0.5"
+        }
+    ],
+    "toppings": [
+        {
+            "name": "Sprinkles",
+            "unit": "tbsp",
+            "p": "0.3"
+        },
+        {
+            "name": "Icing",
+            "unit": "cup",
+            "p": "0.35"
+        },
+        {
+            "name": "Powdered Sugar",
+            "unit": "cup",
+            "p": "0.35"
+        }
+    ]
+}
