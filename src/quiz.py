@@ -63,7 +63,7 @@ class Quiz():
         each ingredient category which are impacted by user choices. 
         Multiplier defaults to 1 for each category.
 
-        returns: (recipe name, dict of {category name : multiplier})
+        returns: resonseGenerator object
         """
         responses = [] 
         recipe_name = ""
