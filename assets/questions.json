@@ -27,7 +27,7 @@
             "responseOptions" : [
                 {
                     "responseText" : "Snowy Woods",
-                    "multipliers" : [{"leaveners" : -0.5}, {"liquids" : 0.2}, {"add-ins" : 0.3}]
+                    "multipliers" : [{"leaveners" : -0.5}, {"fats" : 0.2}, {"add-ins" : 0.3}]
                 },
                 {
                     "responseText" : "Tropical Beach",
@@ -43,5 +43,27 @@
                 }
             ]
         }
-    ]
+    ],
+    "evaluationQuestion" : 
+    {
+        "questionText" : "What do you look for most in a cookie?",
+        "responseOptions" : [
+            {
+                "responseText" : "It should be sweet.",
+                "evaluateBy" : "sweeteners"
+            },
+            {
+                "responseText" : "It should be rich.",
+                "evaluateBy" : "fats"
+            },
+            {
+                "responseText" : "It should be salty.",
+                "evaluateBy" : "salts"
+            },
+            {
+                "responseText" : "It should be fluffy.",
+                "evaluateBy" : "leaveners"
+            }
+        ]
+    }
 }
