@@ -6,19 +6,19 @@
             "responseOptions" : [
                 {
                     "responseText" : "Light",
-                    "multipliers" : [{"leavener" : 0.2}, {"dry_base" : 0.2}]
+                    "multipliers" : [{"leaveners" : 0.2}, {"flour" : 0.2}, {"toppings" : -0.1}]
                 },
                 {
                     "responseText" : "Heavy",
-                    "multipliers" : [{"wet_base" : 0.3}, {"sweetener" : 0.2}, {"filling" : 0.3}, {"toppings" : 0.5}]
+                    "multipliers" : [{"liquids" : 0.3}, {"sweeteners" : 0.2}, {"add-ins" : 0.3}, {"toppings" : 0.5}]
                 },
                 {
                     "responseText" : "Daring",
-                    "multipliers" : [{"spice" : 0.4}, {"flavoring" : 0.5}]
+                    "multipliers" : [{"add-ins" : 0.2}, {"flavorings" : 0.5}, {"salts": 0.2}]
                 },
                 {
                     "responseText" : "Calm",
-                    "multipliers" : [{"sweetener" : 0.1}, {"flavoring" : -0.1}, {"filling" : -0.1}, {"flavoring" : -0.2}]
+                    "multipliers" : [{"sweeteners" : 0.2}, {"flavorings" : -0.1}, {"add-ins" : -0.1}]
                 }
             ]
         },
@@ -27,19 +27,19 @@
             "responseOptions" : [
                 {
                     "responseText" : "Snowy Woods",
-                    "multipliers" : [{"leavener" : -0.5}, {"wet_base" : 0.2}, {"filling" : 0.3}]
+                    "multipliers" : [{"leaveners" : -0.5}, {"liquids" : 0.2}, {"add-ins" : 0.3}]
                 },
                 {
                     "responseText" : "Tropical Beach",
-                    "multipliers" : [{"wet_base" : 0.5}, {"sweetener" : 0.5}, {"filling" : 0.5}]
+                    "multipliers" : [{"liquids" : 0.2}, {"sweeteners" : 0.5}, {"flavorings" : 0.5}]
                 },
                 {
                     "responseText" : "Deep Cavern",
-                    "multipliers" : [{"spice" : 0.3}, {"flavoring" : 0.5}, {"wet_base" : 0.5}]
+                    "multipliers" : [{"flavorings" : 0.3}, {"salts" : 0.2}, {"liquids" : 0.5}]
                 },
                 {
                     "responseText" : "Flower Fields",
-                    "multipliers" : [{"spice" : 0.3}, {"flavoring" : -0.3}, {"dry_base" : 0.3}, {"leavener" : 0.2}]
+                    "multipliers" : [{"flour" : 0.3}, {"flavorings" : -0.3}, {"leaveners" : 0.2}]
                 }
             ]
         }
