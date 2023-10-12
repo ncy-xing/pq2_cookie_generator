@@ -12,6 +12,7 @@ from typing import *
 from .ingredient import Ingredient
 from .constants import *
 
+
 class Recipe:
     def __init__(self, recipe_name: str = None, ingredients: dict[str, List[Ingredient]] = {}) -> None:
         """Initialize recipe with optional name and ingredients.
@@ -24,7 +25,7 @@ class Recipe:
 
         # Initialize dict with all passed values or empty list if not found
         for c in CATEGORIES:
-            self.ingredients.update({c : ingredients.get(c, [])})
+            self.ingredients.update({c: ingredients.get(c, [])})
 
     def get_recipe_name(self) -> str:
         """Return recipe name."""
@@ -33,7 +34,7 @@ class Recipe:
     def get_recipe_ingredients(self) -> dict[str, List[Ingredient]]:
         """Return all recipe ingredients ordered by category."""
         return self.ingredients
-    
+
     def get_ingredients_in_category(self, category: str) -> List[Ingredient]:
         """Return all recipe ingredients in one category."""
         return self.ingredients.get(category, [])
@@ -43,7 +44,7 @@ class Recipe:
         category_list = self.ingredients.get(category)
         if category_list != None:
             category_list.append(ingredient)
-    
+
     def __str__(self) -> str:
         """
         Serializes the recipe with format:
@@ -58,18 +59,20 @@ class Recipe:
         serialize = f"Recipe Name: {self.recipe_name}\n{ingredients}"
         return serialize
 
+
 if __name__ == "__main__":
     # Initial dictionary where not all category is filled
     test_dict = {
-        DRY_BASES : [Ingredient("Flour", 1, OUNCE)],
-        WET_BASES : [Ingredient("Butter", 1, CUP), Ingredient("Eggs", 2, "")],
-        SWEETENERS : [Ingredient("Sugar", 1, CUP)],
-        SPICES : [Ingredient("Corriander", 1.5, TSP)]
+        DRY_BASES: [Ingredient("Flour", 1, OUNCE)],
+        WET_BASES: [Ingredient("Butter", 1, CUP), Ingredient("Eggs", 2, "")],
+        SWEETENERS: [Ingredient("Sugar", 1, CUP)],
+        SPICES: [Ingredient("Corriander", 1.5, TSP)]
     }
     r = Recipe(recipe_name="Test Recipe", ingredients=test_dict)
 
-    r.add_ingredient(SPICES, Ingredient("Salt", 1, TSP)) # Add ing to existing category
-    r.add_ingredient(FILLINGS, Ingredient("Chocolate", 3, TBSP)) # Add ing to new category
+    r.add_ingredient(SPICES, Ingredient("Salt", 1, TSP)
+                     )  # Add ing to existing category
+    # Add ing to new category
+    r.add_ingredient(FILLINGS, Ingredient("Chocolate", 3, TBSP))
 
     print(str(r))
-    
