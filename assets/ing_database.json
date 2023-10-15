@@ -3,260 +3,310 @@
         {
             "name": "Whole Wheat Flour",
             "unit": "cup",
-            "p": "0.1"
+            "p": 0.1,
+            "flavor_score": 1.2
         },
         {
             "name": "All-Purpose Flour",
             "unit": "cup",
-            "p": "0.4"
+            "p": 0.4,
+            "flavor_score": 1
         },
         {
             "name": "Almond Flour",
             "unit": "cup",
-            "p": "0.1"
+            "p": 0.1,
+            "flavor_score": 1.1
         },
         {
             "name": "Coconut Flour",
             "unit": "cup",
-            "p": "0.05"
+            "p": 0.05,
+            "flavor_score": 1.3
         },
         {
             "name": "Rye Flour",
             "unit": "cup",
-            "p": "0.05"
+            "p": 0.05,
+            "flavor_score": 1.2
         },
         {
             "name": "Oat Flour",
             "unit": "cup",
-            "p": "0.1"
+            "p": 0.1,
+            "flavor_score": 1.1
         },
         {
             "name": "Spelt Flour",
             "unit": "cup",
-            "p": "0.2"
+            "p": 0.2,
+            "flavor_score": 1.2
         }
     ],
     "fats": [
         {
             "name": "Butter",
             "unit": "cup",
-            "p": "0.4"
+            "p": 0.4,
+            "flavor_score": 1
         },
         {
             "name": "Olive Oil",
             "unit": "cup",
-            "p": "0.1"
+            "p": 0.1,
+            "flavor_score": 2
         },
         {
             "name": "Coconut Oil",
             "unit": "cup",
-            "p": "0.15"
+            "p": 0.15,
+            "flavor_score": 1.3
         },
         {
             "name": "Lard",
             "unit": "cup",
-            "p": "0.05"
+            "p": 0.05,
+            "flavor_score": 0.9
         },
         {
             "name": "Vegetable Oil",
             "unit": "cup",
-            "p": "0.1"
+            "p": 0.1,
+            "flavor_score": 1.2
         },
         {
             "name": "Shortening",
             "unit": "cup",
-            "p": "0.1"
+            "p": 0.1,
+            "flavor_score": 0.8
         },
         {
             "name": "Margarine",
             "unit": "cup",
-            "p": "0.1"
+            "p": 0.1,
+            "flavor_score": 0.95
+
         }
     ],
     "sweeteners": [
         {
             "name": "White Sugar",
             "unit": "cup",
-            "p": "0.4"
+            "p": 0.4,
+            "flavor_score": 1
         },
         {
             "name": "Brown Sugar",
             "unit": "cup",
-            "p": "0.4"
+            "p": 0.4,
+            "flavor_score": 1
         },
         {
             "name": "Honey",
             "unit": "tbsp",
-            "p": "0.05"
+            "p": 0.05,
+            "flavor_score": 1.3
         },
         {
             "name": "Maple Syrup",
             "unit": "tbsp",
-            "p": "0.05"
+            "p": 0.05,
+            "flavor_score": 1.2
         },
         {
             "name": "Agave Nectar",
             "unit": "tbsp",
-            "p": "0.02"
+            "p": 0.02,
+            "flavor_score": 1.5
         },
         {
             "name": "Confectioner's Sugar",
             "unit": "cup",
-            "p": "0.02"
+            "p": 0.02,
+            "flavor_score": 1
+
         },
         {
             "name": "Molasses",
             "unit": "tbsp",
-            "p": "0.02"
+            "p": 0.02,
+            "flavor_score": 0.7
         }
     ],
     "flavorings": [
         {
             "name": "Vanilla Extract",
             "unit": "tsp",
-            "p": "0.4"
+            "p": 0.4,
+            "flavor_score": 1
         },
         {
             "name": "Almond Extract",
             "unit": "tsp",
-            "p": "0.1"
+            "p": 0.1,
+            "flavor_score": 1.3
         },
         {
             "name": "Lemon Zest",
             "unit": "tsp",
-            "p": "0.15"
+            "p": 0.15,
+            "flavor_score": 0.8
         },
         {
             "name": "Orange Zest",
             "unit": "tsp",
-            "p": "0.15"
+            "p": 0.15,
+            "flavor_score": 0.85
         },
         {
             "name": "Cocoa Powder",
             "unit": "cup",
-            "p": "0.1"
+            "p": 0.1,
+            "flavor_score": 1.2
         },
         {
             "name": "Cinnamon",
             "unit": "tsp",
-            "p": "0.05"
+            "p": 0.05,
+            "flavor_score": 0.9
         },
         {
             "name": "Nutmeg",
             "unit": "tsp",
-            "p": "0.05"
+            "p": 0.05,
+            "flavor_score": 1
         }
     ],
     "leaveners": [
         {
             "name": "Baking Powder",
             "unit": "tsp",
-            "p": "0.3"
+            "p": 0.3,
+            "flavor_score": 1
         },
         {
             "name": "Baking Soda",
             "unit": "tsp",
-            "p": "0.3"
+            "p": 0.3,
+            "flavor_score": 0.9
         },
         {
             "name": "Yeast",
             "unit": "tsp",
-            "p": "0.2"
+            "p": 0.2,
+            "flavor_score": 1.2
         },
         {
             "name": "Whipped Egg Whites",
             "unit": "oz",
-            "p": "0.2"
+            "p": 0.2,
+            "flavor_score": 0.7
         }
     ],
     "liquids": [
         {
             "name": "Water",
             "unit": "cup",
-            "p": "0.2"
+            "p": 0.2,
+            "flavor_score": 1
         },
         {
             "name": "Milk",
             "unit": "cup",
-            "p": "0.4"
+            "p": 0.4,
+            "flavor_score": 1.5
         },
         {
             "name": "Cream",
             "unit": "cup",
-            "p": "0.2"
+            "p": 0.2,
+            "flavor_score": 2.5
         },
         {
             "name": "Almond Milk",
             "unit": "cup",
-            "p": "0.2"
+            "p": 0.2,
+            "flavor_score": 1.3
         }
     ],
     "add-ins": [
         {
             "name": "Chocolate Chips",
             "unit": "cup",
-            "p": "0.4"
+            "p": 0.4,
+            "flavor_score": 1
         },
         {
             "name": "Almonds",
             "unit": "cup",
-            "p": "0.2"
+            "p": 0.2,
+            "flavor_score": 0.7
         },
         {
             "name": "Walnuts",
             "unit": "cup",
-            "p": "0.2"
+            "p": 0.2,
+            "flavor_score": 0.8
         },
         {
             "name": "Raisins",
             "unit": "cup",
-            "p": "0.2"
+            "p": 0.2,
+            "flavor_score": 0.75
         }
     ],
     "stabilizers": [
         {
             "name": "Xanthan Gum",
             "unit": "tsp",
-            "p": "0.4"
+            "p": 0.4,
+            "flavor_score": 1
         },
         {
             "name": "Cream of Tartar",
             "unit": "tsp",
-            "p": "0.3"
+            "p": 0.3,
+            "flavor_score": 0.9
         },
         {
             "name": "Cornstarch",
             "unit": "tbsp",
-            "p": "0.3"
+            "p": 0.3,
+            "flavor_score": 1
         }
     ],
     "salts": [
         {
             "name": "Table Salt",
             "unit": "tsp",
-            "p": "0.5"
+            "p": 0.5,
+            "flavor_score": 1
         },
         {
             "name": "Kosher Salt",
             "unit": "tsp",
-            "p": "0.5"
+            "p": 0.5,
+            "flavor_score": 0.85
         }
     ],
     "toppings": [
         {
             "name": "Sprinkles",
             "unit": "tbsp",
-            "p": "0.3"
+            "p": 0.3,
+            "flavor_score": 1
         },
         {
             "name": "Icing",
             "unit": "cup",
-            "p": "0.35"
+            "p": 0.35,
+            "flavor_score": 1.5
         },
         {
             "name": "Powdered Sugar",
             "unit": "cup",
-            "p": "0.35"
+            "p": 0.35,
+            "flavor_score": 1.2
         }
     ]
 }
