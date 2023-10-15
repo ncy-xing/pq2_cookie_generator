@@ -5,7 +5,6 @@ Given probability across the different required components
 of a cookie recipe, selects an amount for each ingredient. 
 """
 
-from .constants import CATEGORIES
 from .ingredient import Ingredient
 from .recipe import Recipe
 from typing import List
@@ -14,12 +13,15 @@ import os
 import random
 
 
+<<<<<<< HEAD
 BASE_CUP = 1
 BASE_OZ = 2
 BASE_TSP = 2
 BASE_TBSP = 1.5
 
 
+=======
+>>>>>>> main
 class RecipeGenerator:
 
     def __init__(self, category_probabilities: dict) -> None:
@@ -35,13 +37,19 @@ class RecipeGenerator:
 
     def adjust_for_unit(self, unit: str, category: str) -> int:
         if unit == "oz":
-            return BASE_OZ * self.category_probabilities[category]
+            return round(random.randint(1, 9) * self.category_probabilities[category], 1)
         if unit == "cup":
-            return BASE_CUP * self.category_probabilities[category]
+            return round(random.randint(1, 4) * self.category_probabilities[category], 1)
         if unit == "tsp":
+<<<<<<< HEAD
             return BASE_TSP * self.category_probabilities[category]
         if unit == "tbsp":
             return BASE_TBSP * self.category_probabilities[category]
+=======
+            return round(random.uniform(1, 2) * self.category_probabilities[category], 1)
+        if unit == "tbsp":
+            return round(random.uniform(1, 3) * self.category_probabilities[category], 1)
+>>>>>>> main
 
     def populate_categories_ingredients(self) -> dict[str, List[Ingredient]]:
         ingredients = {}
@@ -70,16 +78,6 @@ class RecipeGenerator:
             ingredients[category] = ings
         return ingredients
 
-    def gen_recipe_name(self, ingredients: dict[str, List[Ingredient]]) -> str:
-        all_ingredients = [ingredient for ingredient_list in ingredients.values(
-        ) for ingredient in ingredient_list]
-        sorted_ingredients = sorted(
-            all_ingredients, key=lambda ingredient: ingredient.get_ingredient_amount(), reverse=True)
-        top_3_ingredients = sorted_ingredients[:2]
-        return " ".join([ingredient.get_ingredient_name()
-                        for ingredient in top_3_ingredients]) + " cookie recipe"
-
-    def make_recipe(self, name: str, ingredients: dict[str, List[Ingredient]]) -> Recipe:
-        if name == None:
-            name = self.gen_recipe_name(ingredients)
+    def make_recipe(self, name: str) -> Recipe:
+        ingredients = self.populate_categories_ingredients()
         return Recipe(name, ingredients)

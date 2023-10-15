@@ -16,8 +16,8 @@ class Quiz():
         self.multipliers = {}
         for c in CATEGORIES:
             self.multipliers.update({c: 1})
-            
-    def get_question_response(self, q : dict[str, str | list]) -> int:
+
+    def get_question_response(self, q: dict[str, str | list]) -> int:
         """
         Displays a question and reads in user response. 
 
@@ -44,12 +44,13 @@ class Quiz():
         response_choice_index = ord(response) - OPTION_CHARACTER
         return response_choice_index
 
-    def is_valid_response(self, response : str, num_options : int) -> bool:
+    def is_valid_response(self, response: str, num_options: int) -> bool:
         """
         Helper function for get_question_response. 
 
         returns: true if user inputted a valid response letter. False if response is empty or more than one character.  
         """
+        response = response.lower()
         if len(response) > 1 or len(response) == 0:
             return False
         if ord(response) not in range(OPTION_CHARACTER, OPTION_CHARACTER + num_options):
@@ -65,7 +66,7 @@ class Quiz():
 
         returns: resonseGenerator object
         """
-        responses = [] 
+        responses = []
         recipe_name = ""
         evaluation_metric = ""
 
@@ -73,25 +74,27 @@ class Quiz():
         print(self.questions["startText"])
         for q in self.questions["questions"]:
             response_choice_index = self.get_question_response(q)
-            responses.append(q["responseOptions"][response_choice_index]["responseText"])
+            responses.append(q["responseOptions"]
+                             [response_choice_index]["responseText"])
             question_multipliers = q["responseOptions"][response_choice_index]["multipliers"]
 
-            # Add question multiplier to total multipliers 
+            # Add question multiplier to total multipliers
             for q in question_multipliers:
                 for c, m in q.items():
-                    self.multipliers.update({c : self.multipliers.get(c) + m})
+                    self.multipliers.update({c: self.multipliers.get(c) + m})
 
         # Load evaluation question. Convert user answer to evaluation metric.
         eval_question = self.questions["evaluationQuestion"]
         response_choice_index = self.get_question_response(eval_question)
         evaluation_metric = eval_question["responseOptions"][response_choice_index]["evaluateBy"]
 
-        # Generate recipe name from responses 
+        # Generate recipe name from responses
         for r in responses:
             recipe_name += f"{r} "
         recipe_name += "Cookies"
-        
+
         return GeneratorRequest(recipe_name, self.multipliers, evaluation_metric)
+
 
 if __name__ == "__main__":
     quiz = Quiz()
