@@ -13,15 +13,6 @@ import os
 import random
 
 
-<<<<<<< HEAD
-BASE_CUP = 1
-BASE_OZ = 2
-BASE_TSP = 2
-BASE_TBSP = 1.5
-
-
-=======
->>>>>>> main
 class RecipeGenerator:
 
     def __init__(self, category_probabilities: dict) -> None:
@@ -41,15 +32,9 @@ class RecipeGenerator:
         if unit == "cup":
             return round(random.randint(1, 4) * self.category_probabilities[category], 1)
         if unit == "tsp":
-<<<<<<< HEAD
-            return BASE_TSP * self.category_probabilities[category]
-        if unit == "tbsp":
-            return BASE_TBSP * self.category_probabilities[category]
-=======
             return round(random.uniform(1, 2) * self.category_probabilities[category], 1)
         if unit == "tbsp":
             return round(random.uniform(1, 3) * self.category_probabilities[category], 1)
->>>>>>> main
 
     def populate_categories_ingredients(self) -> dict[str, List[Ingredient]]:
         ingredients = {}
