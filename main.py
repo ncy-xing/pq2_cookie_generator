@@ -9,6 +9,7 @@ import json
 
 OPTION_CHARACTER = 97
 DEFAULT_MULTIPLIER = 1.0
+
 if __name__ == "__main__":
     quiz = Quiz()
     generator_request = quiz.run_quiz()
