@@ -6,7 +6,6 @@ import json
 OPTION_CHARACTER = 97
 DEFAULT_MULTIPLIER = 1.0
 
-
 class Quiz():
     def __init__(self) -> None:
         """
