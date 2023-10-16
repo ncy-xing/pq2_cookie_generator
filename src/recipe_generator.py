@@ -8,6 +8,7 @@ of a cookie recipe, selects an amount for each ingredient.
 from .ingredient import Ingredient
 from .recipe import Recipe
 from typing import List
+import constants
 import json
 import os
 import random
@@ -66,3 +67,22 @@ class RecipeGenerator:
     def make_recipe(self, name: str) -> Recipe:
         ingredients = self.populate_categories_ingredients()
         return Recipe(name, ingredients)
+
+    def make_evaluated_recipe(self, name: str, evaluation_metric: str) -> Recipe:
+        # generate multiple recipes, then choose the best one according to the eval metric
+        recipes = []
+        for i in range(10):
+            recipes.append(self.make_recipe(name))
+
+    def get_evaluation_score(self, recipe: Recipe, evaluation_metric: str) -> int:
+        if evaluation_metric == constants.FATS:
+            pass
+        elif evaluation_metric == constants.SWEETENERS:
+            pass
+        elif evaluation_metric == constants.SALTS:
+            pass
+        elif evaluation_metric == constants.LEAVENERS:
+            pass
+        else:
+            #error
+            pass
