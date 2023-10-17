@@ -10,11 +10,10 @@ or providing a name and a dict of Ingredient objects keyed by category. Recipes 
 
 from typing import *
 from .ingredient import Ingredient
-from .constants import *
-
-
+# from .constants import *
+from .constants import CATEGORIES
 class Recipe:
-    def __init__(self, recipe_name: str = None, ingredients: dict[str, List[Ingredient]] = {}) -> None:
+    def __init__(self, recipe_name: str = None, ingredients: dict[str, List[Ingredient]] = {}, score: int = 0) -> None:
         """Initialize recipe with optional name and ingredients.
 
         name -- name of the recipe 
@@ -22,6 +21,7 @@ class Recipe:
         """
         self.recipe_name = recipe_name
         self.ingredients = {}
+        self.score = score
 
         # Initialize dict with all passed values or empty list if not found
         for c in CATEGORIES:
@@ -30,11 +30,17 @@ class Recipe:
     def get_recipe_name(self) -> str:
         """Return recipe name."""
         return self.recipe_name
+    
+    def set_eval_score(self, score: int) -> None:
+        self.score = score
+    
+    def get_eval_score(self) -> int:
+        return self.score
 
     def get_recipe_ingredients(self) -> dict[str, List[Ingredient]]:
         """Return all recipe ingredients ordered by category."""
         return self.ingredients
-
+    
     def get_ingredients_in_category(self, category: str) -> List[Ingredient]:
         """Return all recipe ingredients in one category."""
         return self.ingredients.get(category, [])
@@ -60,19 +66,22 @@ class Recipe:
         return serialize
 
 
-if __name__ == "__main__":
-    # Initial dictionary where not all category is filled
-    test_dict = {
-        DRY_BASES: [Ingredient("Flour", 1, OUNCE)],
-        WET_BASES: [Ingredient("Butter", 1, CUP), Ingredient("Eggs", 2, "")],
-        SWEETENERS: [Ingredient("Sugar", 1, CUP)],
-        SPICES: [Ingredient("Corriander", 1.5, TSP)]
-    }
-    r = Recipe(recipe_name="Test Recipe", ingredients=test_dict)
+# def test_recipe_class():
+#     # Initial dictionary where not all category is filled
+#     test_dict = {
+#         "DRY_BASES": [Ingredient("Flour", 1, constants.OUNCE)],
+#         "WET_BASES": [Ingredient("Butter", 1, constants.CUP), Ingredient("Eggs", 2, "")],
+#         "SWEETENERS": [Ingredient("Sugar", 1, constants.CUP)],
+#         "SPICES": [Ingredient("Corriander", 1.5, constants.TSP)]
+#     }
+#     r = Recipe(recipe_name="Test Recipe", ingredients=test_dict)
 
-    r.add_ingredient(SPICES, Ingredient("Salt", 1, TSP)
-                     )  # Add ing to existing category
-    # Add ing to new category
-    r.add_ingredient(FILLINGS, Ingredient("Chocolate", 3, TBSP))
+#     r.add_ingredient("SPICES", Ingredient("Salt", 1, constants.TSP) 
+#                      )  # Add ing to existing category
+#     # Add ing to new category
+#     r.add_ingredient("FILLINGS", Ingredient("Chocolate", 3, constants.TBSP))
 
-    print(str(r))
+#     print(str(r))
+
+# if __name__ == "__main__":
+#     test_recipe_class()
