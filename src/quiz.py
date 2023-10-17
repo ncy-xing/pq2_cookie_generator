@@ -1,4 +1,4 @@
-from .constants import *
+from .constants import CATEGORIES
 from .generator_request import GeneratorRequest
 import os
 import json
