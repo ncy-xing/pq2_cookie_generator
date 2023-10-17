@@ -8,6 +8,7 @@ if __name__ == "__main__":
     # print(f"Created multiplers =\n {generator_request.get_multipliers()}")
     # print(f"Evaluation metric = {generator_request.get_evaluation_metric()}\n")
     recipe_gen = RecipeGenerator(generator_request.get_multipliers())
-    recipe = recipe_gen.make_eval_recipe(generator_request.get_recipe_name(), generator_request.get_evaluation_metric())
-    print(recipe)
+    recipe = recipe_gen.make_eval_recipe(
+        generator_request.get_recipe_name(),
+        generator_request.get_evaluation_metric())
     # print(f"score = {recipe.get_eval_score()}")

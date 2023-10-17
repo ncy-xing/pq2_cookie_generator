@@ -13,6 +13,7 @@ import json
 import os
 import random
 
+
 class RecipeGenerator:
 
     def __init__(self, category_probabilities: dict) -> None:
@@ -23,7 +24,8 @@ class RecipeGenerator:
         ing_file = open(os.path.join("assets", "ing_database.json"))
         self.ing_db = json.load(ing_file)
 
-    def set_category_probabilities(self, category_probabilities: dict[str, float]) -> None:
+    def set_category_probabilities(self,
+                                   category_probabilities: dict[str, float]) -> None:
         """
         Sets user-given category probabilities. 
         """
@@ -35,29 +37,35 @@ class RecipeGenerator:
         """
         return self.category_probabilities
 
-    def generate_ing_amounts(self, unit: str, category: str, num_ings: int) -> List[float]:
+    def generate_ing_amounts(self, unit: str, category: str,
+                             num_ings: int) -> List[float]:
         """
-        Randomly generate an amount for the ingredient category. Different units will be 
-        multiplied by numbers from an appropriate range. 
+        Randomly generate an amount for the ingredient category. Different
+        units will be multiplied by numbers from an appropriate range. 
         """
         total_category_amount = 0
-            
+
         if unit == "oz":
-            total_category_amount = round(random.randint(1, 9) * self.category_probabilities[category], 1)
+            total_category_amount = round(random.randint(
+                1, 9) * self.category_probabilities[category], 1)
         if unit == "cup":
-            total_category_amount = round(random.randint(1, 4) * self.category_probabilities[category], 1)
+            total_category_amount = round(random.randint(
+                1, 4) * self.category_probabilities[category], 1)
         if unit == "tsp":
-            total_category_amount = round(random.uniform(1, 2) * self.category_probabilities[category], 1)
+            total_category_amount = round(random.uniform(
+                1, 2) * self.category_probabilities[category], 1)
         if unit == "tbsp":
-            total_category_amount = round(random.uniform(1, 3) * self.category_probabilities[category], 1)
-        
-        if num_ings == 1: 
+            total_category_amount = round(random.uniform(
+                1, 3) * self.category_probabilities[category], 1)
+
+        if num_ings == 1:
             return [total_category_amount]
         # for ing in ing_list:
         amount_segments = []
         amounts = []
         for i in range(num_ings - 1):
-            amount_segments.append(round(random.uniform(0.1, total_category_amount), 1))
+            amount_segments.append(
+                round(random.uniform(0.1, total_category_amount), 1))
         amount_segments.append(10)
         amount_segments.append(0)
         amount_segments = sorted(amount_segments)
@@ -97,8 +105,9 @@ class RecipeGenerator:
 
             ings = []
             ing_unit = selected_ing_objs[0]["unit"]
-            ing_amounts = self.generate_ing_amounts(ing_unit, category, len(selected_ing))
-            
+            ing_amounts = self.generate_ing_amounts(
+                ing_unit, category, len(selected_ing))
+
             for i in range(len(selected_ing_objs)):
                 ing = selected_ing_objs[i]
                 ings.append(Ingredient(ing["name"], ing_amounts[i], ing_unit))
@@ -109,25 +118,29 @@ class RecipeGenerator:
     def recipe_comparator(self, recipe: Recipe):
         return recipe.get_eval_score()
 
-    def make_eval_recipe(self, name: str, evaluation_metric: str, max_recipes: int = 5) -> Recipe:
+    def make_eval_recipe(self, name: str, evaluation_metric: str,
+                         max_recipes: int = 5) -> Recipe:
         """
-        Generate multiple recipes, then return the best one according to the evaluation metric.
+        Generate multiple recipes, then return the best one according to the 
+        evaluation metric.
         """
         recipes = []
-        for _ in range(max_recipes):  
+        for _ in range(max_recipes):
             ingredients = self.populate_categories_ingredients()
             recipe = Recipe(name, ingredients)
-            reciped_scored = self.get_evaluation_score(recipe, evaluation_metric)
+            reciped_scored = self.get_evaluation_score(
+                recipe, evaluation_metric)
             recipes.append(reciped_scored)
         recipes_sorted = sorted(recipes, key=self.recipe_comparator, reverse=True)
         
         # for recipe in recipes_sorted:
             # print(recipe)
             # print(recipe.get_eval_score())
+          
         return recipes_sorted[0]
-        
 
-    def get_evaluation_score(self, recipe: Recipe, evaluation_metric: str) -> Recipe:
+    def get_evaluation_score(self, recipe: Recipe,
+                             evaluation_metric: str) -> Recipe:
         """
         Computes an evaluation score using the category indicated by the user. 
         Returns recipe with modified score. 
@@ -138,7 +151,7 @@ class RecipeGenerator:
             print("Invalid evaluation metric: " + evaluation_metric)
             recipe.set_eval_score(-1)
             return -1
-            
+
         category_db = self.ing_db[evaluation_metric]
         ings_list = recipe.get_recipe_ingredients()[evaluation_metric]
         ing_names = [ing["name"] for ing in category_db]
@@ -146,17 +159,18 @@ class RecipeGenerator:
 
         # Get evaluation score for individual ingredients in category
         for ing in ings_list:
-            ing_name = ing.get_ingredient_name() # name of recipe ingredient
+            ing_name = ing.get_ingredient_name()  # name of recipe ingredient
             if ing_name in ing_names:
                 flavor_score = 0
                 ing_tbsp_amount = 0
-                for db_ing in category_db: 
-                    if db_ing["name"] == ing_name: 
+                for db_ing in category_db:
+                    if db_ing["name"] == ing_name:
                         flavor_score = db_ing["flavor_score"]
-                        ing_tbsp_amount = self.convert_to_tbsp(ing.get_ingredient_amount(), db_ing["unit"])
-                
+                        ing_tbsp_amount = self.convert_to_tbsp(
+                            ing.get_ingredient_amount(), db_ing["unit"])
+
                 ing_scores.append(flavor_score * ing_tbsp_amount)
-        
+
         # Sum ingredient scores
         if len(ing_scores) < 1:
             score = 0
@@ -164,7 +178,7 @@ class RecipeGenerator:
             score = sum(ing_scores)
         recipe.set_eval_score(score)
         return recipe
-    
+
     def convert_to_tbsp(self, amount: float, unit: str) -> float:
         """
         Convert given ingredient amount to tablespoons.
