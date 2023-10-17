@@ -8,8 +8,12 @@ consisting of the name of the final recipe, multipliers for each category of ing
 by which to evaluate and select generated ingredients. 
 """
 
+
 class GeneratorRequest():
-    def __init__(self, recipe_name: str = "None", multipliers: dict[str, int | float] = {}, evaluation_metric: str = None) -> None:
+    def __init__(self, recipe_name: str = "None",
+                 multipliers: dict[str, int | float] = {},
+                 evaluation_metric: str = None) -> None:
+
         self.recipe_name = recipe_name
         self.multipliers = multipliers
         self.evaluation_metric = evaluation_metric

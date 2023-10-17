@@ -6,6 +6,7 @@ import json
 OPTION_CHARACTER = 97
 DEFAULT_MULTIPLIER = 1.0
 
+
 class Quiz():
     def __init__(self) -> None:
         """
@@ -48,7 +49,8 @@ class Quiz():
         """
         Helper function for get_question_response. 
 
-        returns: true if user inputted a valid response letter. False if response is empty or more than one character.  
+        returns: true if user inputted a valid response letter. False if 
+        response is empty or more than one character.  
         """
         response = response.lower()
         if len(response) > 1 or len(response) == 0:
