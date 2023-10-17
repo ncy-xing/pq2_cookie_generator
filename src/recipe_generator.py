@@ -61,7 +61,6 @@ class RecipeGenerator:
         amount_segments.append(10)
         amount_segments.append(0)
         amount_segments = sorted(amount_segments)
-        print("debugging", amount_segments)
 
         # two pointers
         for i in range(1, len(amount_segments)):
@@ -103,11 +102,6 @@ class RecipeGenerator:
             for i in range(len(selected_ing_objs)):
                 ing = selected_ing_objs[i]
                 ings.append(Ingredient(ing["name"], ing_amounts[i], ing_unit))
-
-            # for ing in selected_ing_objs:
-            #     ing_unit = ing["unit"]
-            #     for amount in self.generate_ing_amounts(ing_unit, category, len(selected_ing)):
-            #         ings.append(Ingredient(ing["name"], amount, ing_unit))
 
             ingredients[category] = ings
         return ingredients
