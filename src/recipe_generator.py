@@ -68,8 +68,8 @@ class RecipeGenerator:
             amount = max(0.1, round(amount_diff, 1))
             amounts.append(amount)
 
-        print("debugging", amount_segments)
-        print(amounts)
+        # print("debugging", amount_segments)
+        # print(amounts)
         return amounts
 
     def populate_categories_ingredients(self) -> dict[str, List[Ingredient]]:
@@ -121,9 +121,9 @@ class RecipeGenerator:
             recipes.append(reciped_scored)
         recipes_sorted = sorted(recipes, key=self.recipe_comparator, reverse=True)
         
-        for recipe in recipes_sorted:
-            print(recipe)
-            print(recipe.get_eval_score())
+        # for recipe in recipes_sorted:
+            # print(recipe)
+            # print(recipe.get_eval_score())
         return recipes_sorted[0]
         
 
