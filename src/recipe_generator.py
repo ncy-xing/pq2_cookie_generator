@@ -66,7 +66,7 @@ class RecipeGenerator:
         for i in range(num_ings - 1):
             amount_segments.append(
                 round(random.uniform(0.1, total_category_amount), 1))
-        amount_segments.append(10)
+        amount_segments.append(total_category_amount)
         amount_segments.append(0)
         amount_segments = sorted(amount_segments)
 
