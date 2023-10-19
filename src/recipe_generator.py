@@ -23,8 +23,8 @@ class RecipeGenerator:
         ing_file = open(os.path.join("assets", "ing_database.json"))
         self.ing_db = json.load(ing_file)
 
-    def set_category_probabilities(self,
-    category_probabilities: dict[str, float]) -> None:
+    def set_category_probabilities(self, 
+                                   category_probabilities: dict[str, float]) -> None:
         """
         Sets user-given category probabilities. 
         """
@@ -128,12 +128,9 @@ class RecipeGenerator:
             reciped_scored = self.get_evaluation_score(
                 recipe, evaluation_metric)
             recipes.append(reciped_scored)
-        recipes_sorted = sorted(recipes, key=self.recipe_comparator, reverse=True)
-        
-        # for recipe in recipes_sorted:
-            # print(recipe)
-            # print(recipe.get_eval_score())
-          
+
+        recipes_sorted = sorted(
+            recipes, key=self.recipe_comparator, reverse=True)
         return recipes_sorted[0]
 
     def get_evaluation_score(self, recipe: Recipe,
@@ -148,7 +145,7 @@ class RecipeGenerator:
             print("Invalid evaluation metric: " + evaluation_metric)
             recipe.set_eval_score(-1)
             return -1
-            
+
         category_db = self.ing_db[evaluation_metric]
         ings_list = recipe.get_recipe_ingredients()[evaluation_metric]
         ing_names = [ing["name"] for ing in category_db]
@@ -175,7 +172,7 @@ class RecipeGenerator:
             score = sum(ing_scores)
         recipe.set_eval_score(score)
         return recipe
-        
+
     def convert_to_tbsp(self, amount: float, unit: str) -> float:
         """
         Convert given ingredient amount to tablespoons.

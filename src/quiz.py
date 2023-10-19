@@ -51,6 +51,7 @@ class Quiz():
 
         returns: true if user inputted a valid response letter if it is one letter
         and within the letter options
+
         """
         response = response.lower()
         return len(response) == 1 \
