@@ -19,10 +19,13 @@ class GeneratorRequest():
         self.evaluation_metric = evaluation_metric
 
     def get_recipe_name(self) -> str:
+        """Return recipe name."""
         return self.recipe_name
 
     def get_multipliers(self) -> dict[str, int | float]:
+        """Return recipe multipliers for its respective category."""
         return self.multipliers
 
     def get_evaluation_metric(self) -> str:
+        """Return recipe evaluation metric."""
         return self.evaluation_metric

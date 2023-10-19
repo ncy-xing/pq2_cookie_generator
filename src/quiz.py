@@ -18,14 +18,14 @@ class Quiz():
         for c in CATEGORIES:
             self.multipliers.update({c: 1})
 
-    def get_question_response(self, q: dict[str, str | list]) -> int:
+    def get_question_response(self, questions: dict[str, str | list]) -> int:
         """
         Displays a question and reads in user response. 
 
         returns: list index of the answer choice selected
         """
-        question_text = q["questionText"]
-        response_options = q["responseOptions"]
+        question_text = questions["questionText"]
+        response_options = questions["responseOptions"]
         num_options = len(response_options)
 
         # Print question and answer choices
@@ -49,15 +49,12 @@ class Quiz():
         """
         Helper function for get_question_response. 
 
-        returns: true if user inputted a valid response letter. False if 
-        response is empty or more than one character.  
+        returns: true if user inputted a valid response letter if it is one letter
+        and within the letter options
         """
         response = response.lower()
-        if len(response) > 1 or len(response) == 0:
-            return False
-        if ord(response) not in range(OPTION_CHARACTER, OPTION_CHARACTER + num_options):
-            return False
-        return True
+        return len(response) == 1 \
+            and ord(response) in range(OPTION_CHARACTER, OPTION_CHARACTER + num_options)
 
     def run_quiz(self) -> dict[str, int | float]:
         """
@@ -74,11 +71,11 @@ class Quiz():
 
         # Load main questions
         print(self.questions["startText"])
-        for q in self.questions["questions"]:
+        for question in self.questions["questions"]:
             response_choice_index = self.get_question_response(q)
-            responses.append(q["responseOptions"]
+            responses.append(question["responseOptions"]
                              [response_choice_index]["responseText"])
-            question_multipliers = q["responseOptions"][response_choice_index]["multipliers"]
+        question_multipliers = question["responseOptions"][response_choice_index]["multipliers"]
 
             # Add question multiplier to total multipliers
             for q in question_multipliers:
