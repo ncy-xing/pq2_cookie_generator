@@ -34,6 +34,18 @@ class Recipe:
     def get_recipe_name(self) -> str:
         """Return recipe name."""
         return self.recipe_name
+    
+    def set_eval_score(self, score: int) -> None:
+        self.score = score
+    
+    def get_eval_score(self) -> int:
+        return self.score
+
+    def set_eval_score(self, score: int) -> None:
+        self.score = score
+
+    def get_eval_score(self) -> int:
+        return self.score
 
     def set_eval_score(self, score: int) -> None:
         self.score = score
@@ -44,7 +56,7 @@ class Recipe:
     def get_recipe_ingredients(self) -> dict[str, List[Ingredient]]:
         """Return all recipe ingredients ordered by category."""
         return self.ingredients
-
+    
     def get_ingredients_in_category(self, category: str) -> List[Ingredient]:
         """Return all recipe ingredients in one category."""
         return self.ingredients.get(category, [])

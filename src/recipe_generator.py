@@ -13,7 +13,6 @@ import json
 import os
 import random
 
-
 class RecipeGenerator:
 
     def __init__(self, category_probabilities: dict) -> None:
@@ -24,7 +23,7 @@ class RecipeGenerator:
         ing_file = open(os.path.join("assets", "ing_database.json"))
         self.ing_db = json.load(ing_file)
 
-    def set_category_probabilities(self,
+    def set_category_probabilities(self, 
                                    category_probabilities: dict[str, float]) -> None:
         """
         Sets user-given category probabilities. 
@@ -66,15 +65,16 @@ class RecipeGenerator:
         for i in range(num_ings - 1):
             amount_segments.append(
                 round(random.uniform(0.1, total_category_amount), 1))
-        amount_segments.append(total_category_amount)
+        amount_segments.append(10)
         amount_segments.append(0)
         amount_segments = sorted(amount_segments)
 
-        # two pointers
+        # two pointers approach
         for i in range(1, len(amount_segments)):
             amount_diff = amount_segments[i] - amount_segments[i-1]
             amount = max(0.1, round(amount_diff, 1))
             amounts.append(amount)
+
         return amounts
 
     def populate_categories_ingredients(self) -> dict[str, List[Ingredient]]:
@@ -128,6 +128,7 @@ class RecipeGenerator:
             reciped_scored = self.get_evaluation_score(
                 recipe, evaluation_metric)
             recipes.append(reciped_scored)
+
         recipes_sorted = sorted(
             recipes, key=self.recipe_comparator, reverse=True)
         return recipes_sorted[0]
