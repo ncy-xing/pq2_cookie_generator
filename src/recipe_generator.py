@@ -8,7 +8,8 @@ of a cookie recipe, selects an amount for each ingredient.
 from .ingredient import Ingredient
 from .recipe import Recipe
 from typing import List
-from .constants import SWEETENERS, FATS, SALTS, LEAVENERS, CUP, OUNCE, TSP, TBSP
+from .constants import FLOUR, SWEETENERS, FATS, SALTS, LEAVENERS, \
+    CUP, OUNCE, TSP, TBSP
 import json
 import os
 import random
@@ -57,16 +58,21 @@ class RecipeGenerator:
         if unit == "tbsp":
             total_category_amount = round(random.uniform(
                 1, 3) * self.category_probabilities[category], 1)
+            
+        # Maintain 3 2 1 ratio for ingredient types
+        if category == FLOUR:
+            total_category_amount = 3 * total_category_amount
+        if category == FATS: 
+            total_category_amount = 2 * total_category_amount
 
         if num_ings == 1:
             return [total_category_amount]
-        # for ing in ing_list:
         amount_segments = []
         amounts = []
         for i in range(num_ings - 1):
             amount_segments.append(
                 round(random.uniform(0.1, total_category_amount), 1))
-        amount_segments.append(10)
+        amount_segments.append(total_category_amount)
         amount_segments.append(0)
         amount_segments = sorted(amount_segments)
 
