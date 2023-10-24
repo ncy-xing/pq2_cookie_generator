@@ -1,3 +1,13 @@
+"""
+Assignment: CSCI 3725 PQ2
+Date: 10-11-2023
+
+The Quiz class readers the quiz questions and their corresponding response
+choices to populate a multiplier dictionary for the different cookie
+categories. It also determines the evaluation metric category for the cookie 
+based on the user's responses.
+"""
+
 from .constants import CATEGORIES
 from .generator_request import GeneratorRequest
 import os
@@ -10,7 +20,7 @@ DEFAULT_MULTIPLIER = 1.0
 class Quiz():
     def __init__(self) -> None:
         """
-        Initialize questions from file and deault multipliers for category. 
+        Initialize questions from file and default multipliers for category. 
         """
         questions_file = open(os.path.join("assets", "questions.json"))
         self.questions = json.load(questions_file)
@@ -55,7 +65,8 @@ class Quiz():
         """
         response = response.lower()
         return len(response) == 1 \
-            and ord(response) in range(OPTION_CHARACTER, OPTION_CHARACTER + num_options)
+            and ord(response) in range(OPTION_CHARACTER, OPTION_CHARACTER +
+                                       num_options)
 
     def run_quiz(self) -> dict[str, int | float]:
         """
@@ -73,15 +84,15 @@ class Quiz():
         # Load main questions
         print(self.questions["startText"])
         for question in self.questions["questions"]:
-            response_choice_index = self.get_question_response(q)
+            response_choice_index = self.get_question_response(question)
             responses.append(question["responseOptions"]
                              [response_choice_index]["responseText"])
         question_multipliers = question["responseOptions"][response_choice_index]["multipliers"]
 
-            # Add question multiplier to total multipliers
-            for q in question_multipliers:
-                for c, m in q.items():
-                    self.multipliers.update({c: self.multipliers.get(c) + m})
+        # Add question multiplier to total multipliers
+        for q in question_multipliers:
+            for c, m in q.items():
+                self.multipliers.update({c: self.multipliers.get(c) + m})
 
         # Load evaluation question. Convert user answer to evaluation metric.
         eval_question = self.questions["evaluationQuestion"]
@@ -94,11 +105,3 @@ class Quiz():
         recipe_name += "Cookies"
 
         return GeneratorRequest(recipe_name, self.multipliers, evaluation_metric)
-
-
-if __name__ == "__main__":
-    quiz = Quiz()
-    generator_request = quiz.run_quiz()
-    print(f"\nRecipe name = {generator_request.get_recipe_name()}")
-    print(f"Created multiplers = {generator_request.get_multipliers()}")
-    print(f"Evaluation metric = {generator_request.get_evaluation_metric()}")

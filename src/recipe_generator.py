@@ -1,8 +1,10 @@
 """
-@author: Yonas Gebregziabher
+Assignment: CSCI 3725 PQ2
+Date: 10-11-2023
 
-Given probability across the different required components 
-of a cookie recipe, selects an amount for each ingredient. 
+The RecipeGenerator class is responsible for generating, evaluating, and 
+selecting the best recipe for the given evaluation category. It also handles
+amount distribution of cookies to keep the desired ratio.
 """
 
 from .ingredient import Ingredient
@@ -14,6 +16,7 @@ import json
 import os
 import random
 
+
 class RecipeGenerator:
 
     def __init__(self, category_probabilities: dict) -> None:
@@ -24,7 +27,7 @@ class RecipeGenerator:
         ing_file = open(os.path.join("assets", "ing_database.json"))
         self.ing_db = json.load(ing_file)
 
-    def set_category_probabilities(self, 
+    def set_category_probabilities(self,
                                    category_probabilities: dict[str, float]) -> None:
         """
         Sets user-given category probabilities. 
@@ -57,11 +60,11 @@ class RecipeGenerator:
         if unit == "tbsp":
             total_category_amount = round(random.uniform(
                 1, 3) * self.category_probabilities[category], 1)
-            
+
         # Maintain 3 2 1 ratio for ingredient types
         if category == FLOUR:
             total_category_amount = 3 * total_category_amount
-        if category == FATS: 
+        if category == FATS:
             total_category_amount = 2 * total_category_amount
 
         if num_ings == 1:
