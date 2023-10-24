@@ -9,7 +9,7 @@ the ingredients up into their respective abstract categories. In doing so,
 we get novel cookie recipe that conform to the baseline requirements of a cookie
 that doesn't rely on an existing database of recipes to draw inspiration from.
 
-{insert image here}
+<img width="375" alt="image" src="https://github.com/ncy-xing/pq2_cookie_generator/assets/86376122/c22af3ba-4fe1-4f23-b951-09bca9e4efd5">
 
 ### How does QuizzyByte Baker work?
 
