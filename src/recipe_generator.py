@@ -1,14 +1,17 @@
 """
-@author: Yonas Gebregziabher
+Assignment: CSCI 3725 PQ2
+Date: 10-11-2023
 
-Given probability across the different required components 
-of a cookie recipe, selects an amount for each ingredient. 
+The RecipeGenerator class is responsible for generating, evaluating, and 
+selecting the best recipe for the given evaluation category. It also handles
+amount distribution of cookies to keep the desired ratio.
 """
 
 from .ingredient import Ingredient
 from .recipe import Recipe
 from typing import List
-from .constants import SWEETENERS, FATS, SALTS, LEAVENERS, CUP, OUNCE, TSP, TBSP
+from .constants import FLOUR, SWEETENERS, FATS, SALTS, LEAVENERS, \
+    CUP, OUNCE, TSP, TBSP
 import json
 import os
 import random
@@ -58,26 +61,29 @@ class RecipeGenerator:
             total_category_amount = round(random.uniform(
                 1, 3) * self.category_probabilities[category], 1)
 
+        # Maintain 3 2 1 ratio for ingredient types
+        if category == FLOUR:
+            total_category_amount = 3 * total_category_amount
+        if category == FATS:
+            total_category_amount = 2 * total_category_amount
+
         if num_ings == 1:
             return [total_category_amount]
-        # for ing in ing_list:
         amount_segments = []
         amounts = []
         for i in range(num_ings - 1):
             amount_segments.append(
                 round(random.uniform(0.1, total_category_amount), 1))
-        amount_segments.append(10)
+        amount_segments.append(total_category_amount)
         amount_segments.append(0)
         amount_segments = sorted(amount_segments)
 
-        # two pointers
+        # two pointers approach
         for i in range(1, len(amount_segments)):
             amount_diff = amount_segments[i] - amount_segments[i-1]
             amount = max(0.1, round(amount_diff, 1))
             amounts.append(amount)
 
-        # print("debugging", amount_segments)
-        # print(amounts)
         return amounts
 
     def populate_categories_ingredients(self) -> dict[str, List[Ingredient]]:
@@ -131,12 +137,9 @@ class RecipeGenerator:
             reciped_scored = self.get_evaluation_score(
                 recipe, evaluation_metric)
             recipes.append(reciped_scored)
-        recipes_sorted = sorted(recipes, key=self.recipe_comparator, reverse=True)
-        
-        # for recipe in recipes_sorted:
-            # print(recipe)
-            # print(recipe.get_eval_score())
-          
+
+        recipes_sorted = sorted(
+            recipes, key=self.recipe_comparator, reverse=True)
         return recipes_sorted[0]
 
     def get_evaluation_score(self, recipe: Recipe,

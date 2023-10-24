@@ -1,0 +1,24 @@
+Recipe Name: recipe_3
+1.8 cup Whole Wheat Flour
+6.8 cup All-Purpose Flour
+0.4 cup Oat Flour
+5.8 cup Shortening
+0.4 cup Butter
+0.4 cup Lard
+0.3 cup White Sugar
+0.5 cup Honey
+0.1 tsp Cinnamon
+0.6 tsp Kosher Salt
+0.8 cup Almond Milk
+0.1 cup Water
+0.3 tsp Baking Powder
+0.1 tsp Whipped Egg Whites
+0.8 cup Raisins
+0.1 tsp Xanthan Gum
+0.2 cup Powdered Sugar
+1.2 cup Icing
+
+sweeteners(sweet)-> 27.5 
+fats(rich)-> 665.5999999999999 
+leaveners(fluffy)-> 1.7000000000000002 
+salts(salty)-> 1.7 

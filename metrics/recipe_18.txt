@@ -1,0 +1,25 @@
+Recipe Name: recipe_18
+5.4 cup Spelt Flour
+4.7 cup All-Purpose Flour
+0.5 cup Butter
+1.3 cup Vegetable Oil
+2.5 cup Coconut Oil
+0.9 cup Brown Sugar
+0.7 cup Agave Nectar
+1.3 cup Maple Syrup
+0.3 tsp Orange Zest
+0.9 tsp Vanilla Extract
+0.3 tsp Sea Salt
+0.1 tsp Kosher Salt
+0.9 cup Cream
+0.1 tsp Yeast
+0.6 cup Chocolate Chips
+1.6 tsp Xanthan Gum
+0.2 tsp Cornstarch
+0.8 tbsp Sprinkles
+0.7 tbsp Icing
+
+sweeteners(sweet)-> 82.8 
+fats(rich)-> 514.4 
+leaveners(fluffy)-> 0.23333333333333334 
+salts(salty)-> 1.1333333333333333 

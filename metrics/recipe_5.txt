@@ -1,0 +1,26 @@
+Recipe Name: recipe_5
+1.4 cup Spelt Flour
+0.4 cup All-Purpose Flour
+0.1 cup Butter
+2.2 cup Brown Sugar
+0.4 cup White Sugar
+0.9 cup Maple Syrup
+0.7 tsp Almond Extract
+0.2 tsp Kosher Salt
+2.4 cup Milk
+0.3 cup Cream
+1.1 oz Whipped Egg Whites
+0.4 oz Baking Powder
+1.4 oz Baking Soda
+0.7 cup Walnuts
+1.0 cup Raisins
+0.9 cup Chocolate Chips
+0.4 tsp Xanthan Gum
+0.9 tsp Cream of Tartar
+0.3 cup Icing
+1.1 cup Powdered Sugar
+
+sweeteners(sweet)-> 211.6 
+fats(rich)-> 16.0 
+leaveners(fluffy)-> 15.733333333333334 
+salts(salty)-> 0.5666666666666667 

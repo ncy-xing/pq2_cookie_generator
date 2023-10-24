@@ -1,0 +1,29 @@
+Recipe Name: recipe_16
+0.2 cup All-Purpose Flour
+2.7 cup Spelt Flour
+6.1 cup Whole Wheat Flour
+0.7 cup Lard
+0.5 cup Shortening
+1.1 cup Butter
+0.8 cup White Sugar
+0.2 cup Brown Sugar
+0.5 tsp Orange Zest
+0.5 tsp Vanilla Extract
+0.8 tsp Table Salt
+0.1 tsp Sea Salt
+0.4 cup Almond Milk
+0.4 cup Milk
+0.2 cup Cream
+0.2 tsp Baking Soda
+0.2 tsp Whipped Egg Whites
+2.0 cup Chocolate Chips
+2.2 cup Raisins
+0.3 tsp Cream of Tartar
+0.7 tsp Cornstarch
+0.6 tbsp Sprinkles
+0.2 tbsp Powdered Sugar
+
+sweeteners(sweet)-> 80.0 
+fats(rich)-> 302.4 
+leaveners(fluffy)-> 2.666666666666667 
+salts(salty)-> 2.9499999999999997 

@@ -1,0 +1,25 @@
+Recipe Name: recipe_14
+0.2 cup Rye Flour
+0.8 cup All-Purpose Flour
+2.0 cup Whole Wheat Flour
+0.3 cup Coconut Oil
+0.7 tbsp Maple Syrup
+0.9 tbsp White Sugar
+0.4 tbsp Brown Sugar
+0.3 tsp Vanilla Extract
+0.4 tsp Kosher Salt
+0.3 cup Cream
+2.2 cup Almond Milk
+1.5 cup Water
+0.1 tsp Baking Powder
+0.3 tsp Yeast
+0.1 tsp Baking Soda
+0.6 cup Walnuts
+0.6 tsp Xanthan Gum
+0.3 tsp Cream of Tartar
+1.9 cup Icing
+
+sweeteners(sweet)-> 106.8 
+fats(rich)-> 38.4 
+leaveners(fluffy)-> 0.9999999999999999 
+salts(salty)-> 1.1333333333333333 

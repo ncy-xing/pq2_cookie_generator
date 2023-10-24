@@ -1,0 +1,28 @@
+Recipe Name: recipe_8
+0.5 cup Oat Flour
+0.6 cup Spelt Flour
+4.9 cup All-Purpose Flour
+0.9 cup Vegetable Oil
+0.2 cup Margarine
+1.4 cup Brown Sugar
+1.2 cup White Sugar
+0.2 tsp Vanilla Extract
+0.2 tsp Cocoa Powder
+0.8 tsp Orange Zest
+0.2 tsp Table Salt
+0.4 tsp Kosher Salt
+3.1 cup Almond Milk
+0.6 cup Cream
+0.3 cup Water
+0.1 tsp Baking Soda
+0.5 cup Walnuts
+0.4 cup Chocolate Chips
+4.3 cup Almonds
+0.8 tbsp Cornstarch
+0.8 tbsp Xanthan Gum
+0.5 cup Icing
+
+sweeteners(sweet)-> 208.0 
+fats(rich)-> 100.0 
+leaveners(fluffy)-> 0.13333333333333333 
+salts(salty)-> 1.7999999999999998 

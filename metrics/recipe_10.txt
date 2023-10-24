@@ -1,0 +1,25 @@
+Recipe Name: recipe_10
+4.6 cup All-Purpose Flour
+5.3 cup Spelt Flour
+1.0 cup Vegetable Oil
+2.3 cup Shortening
+0.8 tbsp Honey
+0.6 tsp Lemon Zest
+0.3 tsp Vanilla Extract
+0.7 tsp Nutmeg
+0.9 tsp Table Salt
+0.1 tsp Sea Salt
+1.8 cup Almond Milk
+1.1 cup Milk
+0.2 tsp Baking Soda
+2.2 cup Walnuts
+0.9 tsp Xanthan Gum
+0.1 tsp Cornstarch
+0.6 tsp Cream of Tartar
+1.5 cup Powdered Sugar
+0.4 cup Sprinkles
+
+sweeteners(sweet)-> 5.6000000000000005 
+fats(rich)-> 308.79999999999995 
+leaveners(fluffy)-> 0.26666666666666666 
+salts(salty)-> 3.283333333333333 

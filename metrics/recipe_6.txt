@@ -1,0 +1,24 @@
+Recipe Name: recipe_6
+3.8 cup All-Purpose Flour
+5.6 cup Spelt Flour
+0.6 cup Butter
+3.8 cup Vegetable Oil
+0.4 cup Olive Oil
+0.2 cup White Sugar
+0.4 cup Confectioner's Sugar
+0.3 tsp Vanilla Extract
+0.1 tsp Cinnamon
+0.3 tsp Table Salt
+0.5 tsp Sea Salt
+0.1 tsp Kosher Salt
+1.7 cup Cream
+2.0 cup Milk
+0.2 tsp Baking Soda
+3.5 cup Raisins
+0.4 tsp Xanthan Gum
+0.4 cup Powdered Sugar
+
+sweeteners(sweet)-> 48.0 
+fats(rich)-> 462.4 
+leaveners(fluffy)-> 0.26666666666666666 
+salts(salty)-> 2.6999999999999997 

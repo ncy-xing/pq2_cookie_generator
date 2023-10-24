@@ -1,0 +1,22 @@
+Recipe Name: recipe_11
+6.7 cup Whole Wheat Flour
+2.2 cup Coconut Flour
+1.8 cup Butter
+0.5 cup White Sugar
+0.2 cup Agave Nectar
+0.2 cup Honey
+0.4 tsp Vanilla Extract
+0.3 tsp Kosher Salt
+0.6 cup Milk
+0.3 tsp Baking Soda
+0.6 cup Almonds
+1.0 tbsp Cornstarch
+0.1 tbsp Cream of Tartar
+1.1 tbsp Xanthan Gum
+0.8 cup Icing
+0.1 cup Powdered Sugar
+
+sweeteners(sweet)-> 43.0 
+fats(rich)-> 288.0 
+leaveners(fluffy)-> 0.39999999999999997 
+salts(salty)-> 0.85 
