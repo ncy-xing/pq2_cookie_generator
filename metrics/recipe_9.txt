@@ -1,0 +1,22 @@
+Recipe Name: recipe_9
+5.2 cup Whole Wheat Flour
+2.7 cup All-Purpose Flour
+7.9 cup Vegetable Oil
+0.7 cup Olive Oil
+0.5 tbsp Honey
+0.2 tsp Lemon Zest
+0.5 tsp Cocoa Powder
+0.9 tsp Orange Zest
+0.4 tsp Kosher Salt
+2.7 cup Almond Milk
+0.2 tsp Baking Powder
+0.1 tsp Baking Soda
+0.3 cup Chocolate Chips
+0.4 cup Raisins
+1.2 tsp Cream of Tartar
+2.1 tbsp Sprinkles
+
+sweeteners(sweet)-> 3.5 
+fats(rich)-> 751.2 
+leaveners(fluffy)-> 0.4666666666666667 
+salts(salty)-> 1.1333333333333333 

@@ -1,0 +1,23 @@
+Recipe Name: recipe_12
+1.9 cup Almond Flour
+4.8 cup Coconut Oil
+0.1 cup Butter
+0.1 cup Confectioner's Sugar
+0.1 cup Brown Sugar
+0.7 tsp Nutmeg
+0.5 tsp Kosher Salt
+0.5 tsp Table Salt
+0.8 cup Almond Milk
+0.1 tsp Baking Powder
+1.1 cup Walnuts
+0.2 cup Chocolate Chips
+0.7 tbsp Cornstarch
+0.1 tbsp Xanthan Gum
+0.3 tbsp Sprinkles
+0.7 tbsp Powdered Sugar
+1.9 tbsp Icing
+
+sweeteners(sweet)-> 16.0 
+fats(rich)-> 630.4 
+leaveners(fluffy)-> 0.16666666666666666 
+salts(salty)-> 3.083333333333333 

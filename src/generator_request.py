@@ -1,5 +1,4 @@
 """
-Authors: Nancy Xing 
 Assignment: CSCI 3725 PQ2 (Adapted from PQ1)
 Date: 10-11-2023
 

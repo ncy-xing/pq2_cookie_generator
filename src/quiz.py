@@ -1,3 +1,13 @@
+"""
+Assignment: CSCI 3725 PQ2
+Date: 10-11-2023
+
+The Quiz class readers the quiz questions and their corresponding response
+choices to populate a multiplier dictionary for the different cookie
+categories. It also determines the evaluation metric category for the cookie 
+based on the user's responses.
+"""
+
 from .constants import CATEGORIES
 from .generator_request import GeneratorRequest
 import os
@@ -74,7 +84,7 @@ class Quiz():
         # Load main questions
         print(self.questions["startText"])
         for question in self.questions["questions"]:
-            response_choice_index = self.get_question_response(q)
+            response_choice_index = self.get_question_response(question)
             responses.append(question["responseOptions"]
                              [response_choice_index]["responseText"])
         question_multipliers = question["responseOptions"][response_choice_index]["multipliers"]

@@ -1,0 +1,24 @@
+Recipe Name: recipe_13
+1.4 cup All-Purpose Flour
+5.8 cup Almond Flour
+4.8 cup Oat Flour
+0.1 cup Shortening
+1.8 cup Coconut Oil
+4.7 cup Butter
+0.3 cup Brown Sugar
+0.4 tsp Vanilla Extract
+0.5 tsp Cocoa Powder
+0.7 tsp Table Salt
+0.6 cup Water
+0.1 cup Milk
+0.3 cup Cream
+0.3 tsp Baking Soda
+0.2 tsp Whipped Egg Whites
+1.8 cup Almonds
+1.0 tsp Cream of Tartar
+1.7 cup Icing
+
+sweeteners(sweet)-> 24.0 
+fats(rich)-> 992.0 
+leaveners(fluffy)-> 2.8000000000000003 
+salts(salty)-> 2.333333333333333 

@@ -1,0 +1,22 @@
+Recipe Name: recipe_19
+4.0 cup All-Purpose Flour
+4.6 cup Spelt Flour
+1.9 cup Butter
+1.0 cup Olive Oil
+0.4 cup Brown Sugar
+0.1 cup White Sugar
+1.0 tsp Orange Zest
+0.3 tsp Vanilla Extract
+0.4 tsp Sea Salt
+0.1 cup Water
+0.3 tsp Baking Soda
+1.1 cup Raisins
+1.0 tbsp Cornstarch
+1.3 tbsp Xanthan Gum
+1.2 tbsp Sprinkles
+0.2 tbsp Powdered Sugar
+
+sweeteners(sweet)-> 40.0 
+fats(rich)-> 384.0 
+leaveners(fluffy)-> 0.39999999999999997 
+salts(salty)-> 1.1333333333333333 
