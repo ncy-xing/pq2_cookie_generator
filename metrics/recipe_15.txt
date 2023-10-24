@@ -1,0 +1,24 @@
+Recipe Name: recipe_15
+1.0 cup All-Purpose Flour
+0.1 cup Whole Wheat Flour
+0.2 cup Shortening
+1.3 cup Butter
+0.2 cup White Sugar
+1.0 cup Brown Sugar
+0.7 tsp Vanilla Extract
+0.5 tsp Cocoa Powder
+0.4 tsp Sea Salt
+1.8 cup Water
+0.8 cup Milk
+1.4 cup Cream
+1.5 oz Whipped Egg Whites
+2.4 oz Yeast
+0.1 oz Baking Soda
+3.3 cup Chocolate Chips
+0.1 tsp Xanthan Gum
+0.7 tbsp Sprinkles
+
+sweeteners(sweet)-> 96.0 
+fats(rich)-> 227.2 
+leaveners(fluffy)-> 23.733333333333334 
+salts(salty)-> 1.1333333333333333 

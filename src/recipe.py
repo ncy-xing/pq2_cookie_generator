@@ -1,12 +1,11 @@
 """
-Authors: Nancy Xing 
 Assignment: CSCI 3725 PQ2 (Adapted from PQ1)
 Date: 9-25-2023
 
 The Recipe class models a recipe as a list of ingredients with specified amounts. 
 Recipes are created by either reading from file, reading from a file directory,
 or providing a name and a dict of Ingredient objects keyed by category.
- Recipes can be written to a text file. 
+Recipes can be written to a text file. 
 """
 
 from typing import *
@@ -34,10 +33,10 @@ class Recipe:
     def get_recipe_name(self) -> str:
         """Return recipe name."""
         return self.recipe_name
-    
+
     def set_eval_score(self, score: int) -> None:
         self.score = score
-    
+
     def get_eval_score(self) -> int:
         return self.score
 
@@ -56,7 +55,7 @@ class Recipe:
     def get_recipe_ingredients(self) -> dict[str, List[Ingredient]]:
         """Return all recipe ingredients ordered by category."""
         return self.ingredients
-    
+
     def get_ingredients_in_category(self, category: str) -> List[Ingredient]:
         """Return all recipe ingredients in one category."""
         return self.ingredients.get(category, [])

@@ -1,0 +1,23 @@
+Recipe Name: recipe_0
+2.0 cup All-Purpose Flour
+0.5 cup Spelt Flour
+0.7 cup Coconut Oil
+0.4 cup Brown Sugar
+2.0 cup Maple Syrup
+0.3 tsp Lemon Zest
+1.3 tsp Nutmeg
+0.1 tsp Sea Salt
+0.1 cup Cream
+0.8 cup Milk
+0.3 tsp Baking Powder
+0.3 tsp Baking Soda
+0.4 cup Raisins
+0.7 cup Chocolate Chips
+0.6 tsp Cream of Tartar
+0.2 cup Icing
+1.4 cup Sprinkles
+
+sweeteners(sweet)-> 40.0 
+fats(rich)-> 89.6 
+leaveners(fluffy)-> 0.8999999999999999 
+salts(salty)-> 0.2833333333333333 
