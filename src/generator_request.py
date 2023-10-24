@@ -3,8 +3,9 @@ Authors: Nancy Xing
 Assignment: CSCI 3725 PQ2 (Adapted from PQ1)
 Date: 10-11-2023
 
-The GeneratorRequest class models a group of input information to pass into the RecipeGenerator class
-consisting of the name of the final recipe, multipliers for each category of ingredient, and a metric
+The GeneratorRequest class models a group of input information to pass into 
+the RecipeGenerator class consisting of the name of the final recipe, 
+multipliers for each category of ingredient, and a metric
 by which to evaluate and select generated ingredients. 
 """
 
