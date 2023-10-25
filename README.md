@@ -1,5 +1,7 @@
 # QuizzyByte Baker
 
+https://github.com/ncy-xing/pq2_cookie_generator/tree/main
+
 ### Recipe Generation
 
 In order to guarantee that we at least get something that resembles a cookie, we modeled our cookie as a combination of ingredients from a set of categories. This was inspired by the PIERRE soup generation system where they divided the ingredients up into their respective abstract categories. In doing so, we get novel cookie recipes that conform to the baseline requirements of a cookie while not relying on an existing database of recipes to draw inspiration
