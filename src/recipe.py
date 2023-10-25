@@ -15,7 +15,7 @@ from .constants import CATEGORIES
 
 class Recipe:
     def __init__(self, recipe_name: str = None, ingredients:
-                 dict[str, List[Ingredient]] = {}, score: int = 0) -> None:
+                 dict[str, List[Ingredient]] = {}, score: float = 0) -> None:
         """Initialize recipe with optional name and ingredients.
 
         name -- name of the recipe 
@@ -34,22 +34,12 @@ class Recipe:
         """Return recipe name."""
         return self.recipe_name
 
-    def set_eval_score(self, score: int) -> None:
+    def set_eval_score(self, score: float) -> None:
+        """Sets the evaluation score of a recipe"""
         self.score = score
 
-    def get_eval_score(self) -> int:
-        return self.score
-
-    def set_eval_score(self, score: int) -> None:
-        self.score = score
-
-    def get_eval_score(self) -> int:
-        return self.score
-
-    def set_eval_score(self, score: int) -> None:
-        self.score = score
-
-    def get_eval_score(self) -> int:
+    def get_eval_score(self) -> float:
+        """Returns the evaluation score of the current recipe object"""
         return self.score
 
     def get_recipe_ingredients(self) -> dict[str, List[Ingredient]]:

@@ -121,7 +121,11 @@ class RecipeGenerator:
             ingredients[category] = ings
         return ingredients
 
-    def recipe_comparator(self, recipe: Recipe):
+    def recipe_comparator(self, recipe: Recipe) -> float:
+        """
+        Returns the score associated with a recipe to be used to compare 
+        recipes in sorting them based on evaluation scores.
+        """
         return recipe.get_eval_score()
 
     def make_eval_recipe(self, name: str, evaluation_metric: str,
